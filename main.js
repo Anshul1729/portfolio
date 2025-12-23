@@ -341,3 +341,17 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log('%c👋 Hey there, curious one!', 'font-size: 24px; font-weight: bold; color: #ff6b4a;');
 console.log('%cBuilt with passion and coffee ☕', 'font-size: 14px; color: #ffb59a;');
 console.log('%cWant to chat? Reach out! 🚀', 'font-size: 14px; color: #4ade80;');
+
+// ===== Email Copy Function =====
+function copyEmail() {
+    const email = 'anshulshivhare3@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }).catch(err => {
+        console.error('Failed to copy email: ', err);
+    });
+}

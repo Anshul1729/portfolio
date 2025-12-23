@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshul Shivhare | Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="header-left">
+                <div class="status-dot"></div>
+                <span>A.S. | Builder_Terminal</span>
+            </div>
+            <div class="header-right">
+                <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+                <div class="menu-dropdown" id="menu-dropdown">
+                    <a href="#" onclick="handleMenuAction('contact')">Contact</a>
+                    <a href="https://github.com/Anshul1729" target="_blank">GitHub</a>
+                    <a href="#" onclick="handleMenuAction('reset')">Reset Terminal</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="chat-window" id="chat-window">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="input-area" id="input-area">
+            <!-- Options chips will appear here -->
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay hidden"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

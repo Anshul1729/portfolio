@@ -1,0 +1,196 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #e0e0e0;
+    --accent-color: #ff4d4d;
+    /* Reddish accent for drama */
+    --serif-font: 'Playfair Display', serif;
+    --sans-font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--sans-font);
+    overflow-x: hidden;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--accent-color);
+    z-index: 100;
+}
+
+main {
+    width: 100%;
+}
+
+.chapter {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    opacity: 0;
+    /* Hidden initially for JS reveal */
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.chapter.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.chapter-number {
+    display: block;
+    font-family: var(--sans-font);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.serif {
+    font-family: var(--serif-font);
+    font-style: italic;
+    color: #fff;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+blockquote {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 2rem;
+    font-size: 1.5rem;
+    font-family: var(--serif-font);
+    font-style: italic;
+    color: #d0d0d0;
+    margin: 3rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.stat .number {
+    display: block;
+    font-size: 4rem;
+    font-family: var(--serif-font);
+    color: #fff;
+}
+
+.stat .label {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: #777;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.project-item h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-family: var(--serif-font);
+}
+
+.arrow-link {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.arrow-link:hover {
+    transform: translateX(10px);
+}
+
+.cta-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e0e0e0;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.link:hover {
+    border-color: #fff;
+}
+
+.credits {
+    margin-top: 5rem;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+/* Specific styling for scroll effect */
+.chapter:nth-child(even) {
+    /* text-align: right; */
+    /* Could be interesting but maybe hard to read */
+}
+
+.chapter:nth-child(even) .content {
+    margin-left: auto;
+}

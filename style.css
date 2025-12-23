@@ -671,31 +671,54 @@ body {
 }
 
 .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-link {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
-    padding: 0.85rem 1.5rem;
+    padding: 2rem;
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    border-radius: 12px;
+    border-radius: 16px;
     text-decoration: none;
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition: all var(--transition-smooth);
+    cursor: pointer;
+    min-width: 0;
+    /* Prevent overflow */
+}
+
+/* Specific button styles if needed, but keeping consistent for now */
+.btn-email:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.btn-github:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-linkedin:hover {
+    border-color: #0077b5;
+    color: #0077b5;
 }
 
 .contact-link:hover {
-    border-color: var(--border-highlight);
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(255, 107, 74, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .contact-link svg {
@@ -840,4 +863,45 @@ body {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Toast Notification */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--accent-primary);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* Responsive adjustments for contact links */
+@media (max-width: 768px) {
+    .contact-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 400px;
+    }
+
+    .contact-link {
+        flex-direction: row;
+        padding: 1rem;
+        justify-content: center;
+    }
 }
