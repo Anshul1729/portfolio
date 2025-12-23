@@ -254,11 +254,10 @@ class ScrollAnimations {
         gsap.from('.contact-link', {
             scrollTrigger: {
                 trigger: '.contact-links',
-                start: 'top 85%',
+                start: 'top 95%', // Trigger earlier
                 toggleActions: 'play none none reverse'
             },
             y: 30,
-            opacity: 0,
             duration: 0.6,
             stagger: 0.1,
             ease: 'power3.out'
